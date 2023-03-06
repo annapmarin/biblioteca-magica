@@ -7,6 +7,7 @@ window.addEventListener("scroll", () => {
 
 
 let flechaArribaBtn = document.getElementById("flecha-arriba");
+document.getElementById("flecha-arriba").style.display = "none";
 flechaArribaBtn.addEventListener("click", () => {
 window.scrollTo(0, 700);
 });
