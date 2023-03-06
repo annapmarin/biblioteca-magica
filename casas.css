@@ -132,3 +132,7 @@
 i {
   color: #e8b315;
 }
+
+i:hover, i:active {
+  color:rgb(141, 10, 10);
+}

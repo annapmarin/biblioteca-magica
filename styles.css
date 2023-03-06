@@ -7,11 +7,11 @@
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth!important;;
+  scroll-behavior: smooth!important;
+  cursor: url(./images/varita-cursor.png), auto;
 }
 
 body {
-cursor: url(./images/varita-cursor.png), auto;
 scroll-behavior: smooth;
 }
 
