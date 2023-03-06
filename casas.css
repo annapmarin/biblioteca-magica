@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Magic School One';
+  src: url(./fonts/magic-school.one.ttf);
+}
+
+.casa-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+#sombrero-seleccionador {
+  display: inherit;
+  position: relative;
+  width: 200px;
+  top: 80px;
+}
+
+#gryffindor,
+#hufflepuff,
+#ravenclaw,
+#slytherin {
+  width: 150px;
+  display: none;
+  filter: grayscale(80%);
+}
+
+#gryffindor:hover,
+#hufflepuff:hover,
+#ravenclaw:hover,
+#slytherin:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+  transition: .2s ease;
+}
+
+#escoge-casa {
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'Magic School One', cursive;
+  margin-top: 30px;
+}
+
+.gryffindor,
+.hufflepuff,
+.ravenclaw,
+.slytherin {
+  margin-top: 20px;
+  display: none;
+  animation: aparecer 2s ease;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.gryffindor h3 {
+  color: rgb(141, 10, 10);
+  text-shadow: -1px 0 #e8b315, 0 1px #e8b315, 1px 0 #e8b315, 0 -1px #e8b315;
+}
+
+.ravenclaw h3 {
+  color: #222f5b;
+  text-shadow: -1px 0 #5d5d5d, 0 1px #5d5d5d, 1px 0 #5d5d5d, 0 -1px #5d5d5d;
+}
+
+.hufflepuff h3 {
+  color: #ecb939;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.slytherin h3 {
+  color: #1a472a;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.personajes {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.personajes img {
+  width: 180px;
+  border-radius: 40px;
+}
+
+.personajes p {
+  margin: 10px;
+}
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/wand-sparkles-solid.svg">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./casas.css">
+    
+    <title>Biblioteca Mágica</title>
+  </head>
+  <body>
+  <div class="App">
+    <div class="banner">
+      <h1 id="title">Biblioteca Mágica</h1>
+      <div class="clouds">
+        <img id="cloud1" src="./images/cloud1.png" />
+        <img id="cloud2" src="./images/cloud2.png" />
+        <img id="cloud3" src="./images/cloud3.png" />
+        <img id="cloud4" src="./images/cloud4.png" />
+        <img id="cloud5" src="./images/cloud5.png" />
+        <img id="cloud6" src="./images/cloud1.png" />
+        <img id="cloud7" src="./images/cloud2.png" />
+        <img id="cloud8" src="./images/cloud3.png" />
+        <img id="cloud9" src="./images/cloud4.png" />
+        <img id="cloud10" src="./images/cloud5.png" />
+      </div> 
+    </div>
+    <div class="content-container">
+      <h2 id="bienvenida">Te doy la bienvenida a Hogwarts, <br>haz click en el sombrero seleccionador</h2>
+      <div class="casa-container">
+        <img onmouseover="agrandarImg()" onmouseout="volverNormal()" id="sombrero-seleccionador" src="./images/Sorting-Hat.webp">
+        <a href="#info-gryffindor"><img id="gryffindor" src="./images/Gryffindor.webp"></a>
+        <a href="#info-ravenclaw"><img id="ravenclaw" src="./images/Ravenclaw.webp"></a>
+        <a href="#info-hufflepuff"><img id="hufflepuff" src="./images/hufflepuff.webp"></a>
+        <a href="#info-slytherin"><img id="slytherin" src="./images/Slytherin.webp"></a>
+      </div>
+      <div class="casa gryffindor" id="info-gryffindor">
+        <h3 id="titulo-gryffindor">Gryffindor</h3>
+        <p>Gryffindor es una de las cuatro casas del Colegio Hogwarts 
+          de Magia y Hechicería, fundada por Godric Gryffindor. Su animal 
+          emblemático es el león y sus colores son el rojo escarlata y el 
+          dorado. Sir Nicholas de Mimsy-Porpington también conocido como "Nick Casi 
+          Decapitado" es el fantasma de la casa. </p>
+          <p>Las principales características de las personas Gryffindor son el coraje 
+          y la caballerosidad. El elemento de Gryffindor es el fuego, ya que
+           se lo asocia al valor y coraje de esta casa. Además, el fuego simboliza 
+           el honor en variadas ocasiones, lo cual también puede aplicar para Gryffindor.</p>
+          <h3>Personajes</h3>
+      </div>
+      <div class="casa ravenclaw" id="info-ravenclaw">
+        <h3>Ravenclaw</h3>
+        <p>Ravenclaw es una de las cuatro casas que componen el Colegio Hogwarts de
+           Magia y Hechicería, fundada por Rowena Ravenclaw, quién tuvo una hija, 
+           cuyo fantasma es la Dama Gris, la cual fue asesinada por el Barón Sanguinario.
+           Su hija le robó la diadema que le pertenecía y huyó a los bosques de Albania, 
+           lugar donde fue asesinada, y donde años después, Lord Voldemort encuentra la diadema 
+           y la esconde en la sala de los menesteres, en el Colegio Hogwarts de Magia y Hechicería.</p>
+           <p>Se dice que fue Ravenclaw quien le puso el nombre al castillo. Los miembros de esta 
+           casa se caracterizan por su ingenio, aprendizaje y sabiduría. El símbolo animal emblemático 
+           es el águila, y el azul y el bronce son sus colores. Ravenclaw corresponde al elemento aire,
+             y es por eso que se eligieron los colores de la Casa; el azul y el bronce representan 
+             el cielo y las plumas de águila respectivamente, ambos tienen mucho que ver con el aire.  
+             El reloj de arena de los puntos de Ravenclaw contiene zafiros azules.</p>
+          <h3>Personajes</h3>
+      </div>
+      <div class="casa hufflepuff" id="info-hufflepuff">
+        <h3>Hufflepuff</h3>
+        <p>Hufflepuff es una de las cuatro casas del Colegio Hogwarts de Magia y Hechicería. 
+          Su fundadora es la bruja medieval Helga Hufflepuff. El fraile gordo es el fantasma 
+          de la casa. Hufflepuff es la más inclusiva de las cuatro casas; el trabajo duro, 
+          la paciencia, la amistad y la honestidad son sumamente necesarias para ser integrantes. 
+          Su animal emblemático es el tejón y sus colores son el amarillo y negro.</p>
+          <p>Hufflepuff corresponde al elemento tierra, y es por eso que se eligieron los 
+            colores de la Casa: el amarillo representaba el trigo, mientras que el negro 
+            era emblemático de la tierra. El reloj de arena de los puntos Hufflepuff 
+            contiene diamantes amarillos. Los estudiantes clasificados en Hufflepuff a menudo
+            demuestran habilidades excepcionales en Herbología, debido a su correspondencia con la tierra.</p>
+          <h3>Personajes</h3>
+      </div>
+      <div class="casa slytherin" id="info-slytherin">
+        <h3>Slytherin</h3>
+        <p>Slytherin es una de las cuatro casas del Colegio Hogwarts de Magia y Hechicería, fundada 
+          por Salazar Slytherin. Al establecer la casa, Salazar instruyó al Sombrero Seleccionador 
+          para que seleccionara a los estudiantes que tenían las características particulares que él 
+          valoraba más. Esas características incluyen: astucia, ingenio y ambición. Muchos estudiantes 
+          de Slytherin tienden a hacer camarillas juntos, a menudo adquiriendo líderes, lo que es un 
+          ejemplo más de las ambiciosas cualidades de Slytherin. El patrón fantasma de la casa es el Barón Sanguinario.</p>
+        <p> Slytherin corresponde al elemento de agua debido a que las serpientes se asocian comúnmente 
+          con el mar y los lagos en la mitología de Europa occidental. Las serpientes son animales 
+          físicamente fluidos y flexibles. Del mismo modo, en la mitología celta, el agua se ve como 
+          un portal a otro mundo, lo que lleva a algunos a especular que el elemento fue elegido para 
+          simbolizar la esperanza de muchos Slytherin de alcanzar una comunidad sangre pura. 
+          Los colores también se corresponden con las aguas alrededor de los lagos y lagunas, 
+          que a menudo son de color verde, y el plateado a menudo se asocia con el agua de lluvia gris.</p>
+        <h3>Personajes</h3>
+      </div>
+    </div>
+
+  <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
