@@ -16,8 +16,13 @@ function volverNormal() {
 }
 
 let sombrero = document.getElementById("sombrero-seleccionador");
+
 window.addEventListener("click", () => {
   document.getElementById("sombrero-seleccionador").style.display = "none";
+  document.getElementById("enlace1").style.position = "inherit";
+  document.getElementById("enlace2").style.position = "inherit";
+  document.getElementById("enlace3").style.position = "inherit";
+  document.getElementById("enlace4").style.position = "inherit";
   document.getElementById("gryffindor").style.display = "block";
   document.getElementById("hufflepuff").style.display = "block";
   document.getElementById("ravenclaw").style.display = "block";
@@ -137,7 +142,7 @@ const getPersonajes = async () => {
         ${datos[i].actor == "" ? "" : `<p style="font-size: 0.9rem">(${datos[i].actor})</p>`} 
         ${datos[i].yearOfBirth != null ? `<p>Nacimiento: ${datos[i].yearOfBirth}` : "<p>Nacimiento: ?</p>"}
         <p>Linaje: 
-        ${datos[i].ancestry == "" ? "desconocido" : 
+        ${datos[i].ancestry == "" ? "?" : 
         datos[i].ancestry == "pure-blood" ? "puro" : 
         datos[i].ancestry == "half-blood" ? "mestizo" : 
         "muggle"}</p>
