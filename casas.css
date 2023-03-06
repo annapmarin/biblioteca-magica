@@ -109,3 +109,26 @@
   margin: 10px;
 }
 
+#flecha-arriba {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  animation: aparArriba .7s ease;
+}
+
+@keyframes aparArriba {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+i {
+  color: #e8b315;
+}

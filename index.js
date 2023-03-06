@@ -3,17 +3,31 @@ window.addEventListener("scroll", () => {
   let value = window.scrollY;
   title.style.marginTop = value * 2 + "px";
   title.style.opacity = 1 - value / 300;
-})
+});
+
+
+let flechaArribaBtn = document.getElementById("flecha-arriba");
+flechaArribaBtn.addEventListener("click", () => {
+window.scrollTo(0, 700);
+});
+
+window.onscroll = () => {
+  if(window.scrollY > 1000) {
+    document.getElementById("flecha-arriba").style.display = "block";
+  } else {
+    document.getElementById("flecha-arriba").style.display = "none";
+  }
+}
 
 function agrandarImg() {
   document.getElementById("sombrero-seleccionador").style.filter = "grayscale(100%)";
   document.getElementById("sombrero-seleccionador").style.transition = "0.5s ease";
-}
+};
 
 function volverNormal() {
   document.getElementById("sombrero-seleccionador").style.filter = "grayscale(0%)";
   document.getElementById("sombrero-seleccionador").style.transition = "0.5s ease";
-}
+};
 
 let sombrero = document.getElementById("sombrero-seleccionador");
 
@@ -28,7 +42,7 @@ window.addEventListener("click", () => {
   document.getElementById("ravenclaw").style.display = "block";
   document.getElementById("slytherin").style.display = "block";
   document.getElementById("bienvenida").innerText = "Escoge tu casa de Hogwarts"
-})
+});
 
 let casaGryffindor = document.getElementById("info-gryffindor");
 let imgGryffindor = document.getElementById("gryffindor");
@@ -67,7 +81,7 @@ imgRavenclaw.addEventListener("click", () => {
     casaSlytherin.style.display = "none";
   }
   casaRavenclaw.style.display = "block";
-})
+});
 
 let casaSlytherin = document.getElementById("info-slytherin");
 let imgSlytherin = document.getElementById("slytherin");
