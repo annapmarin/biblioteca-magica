@@ -1,3 +1,5 @@
+import {traducciones} from './traducciones.js';
+
 let title = document.getElementById("title");
 window.addEventListener("scroll", () => {
   let value = window.scrollY;
@@ -29,8 +31,6 @@ function volverNormal() {
   document.getElementById("sombrero-seleccionador").style.filter = "grayscale(0%)";
   document.getElementById("sombrero-seleccionador").style.transition = "0.5s ease";
 };
-
-let sombrero = document.getElementById("sombrero-seleccionador");
 
 window.addEventListener("click", () => {
   document.getElementById("sombrero-seleccionador").style.display = "none";
@@ -109,47 +109,24 @@ const getPersonajes = async () => {
         ${datos[i].actor == "" ? "" : `<p style="font-size: 0.9rem">(${datos[i].actor})</p>`} 
         ${datos[i].yearOfBirth != null ? `<p>Nacimiento: ${datos[i].yearOfBirth}` : "<p>Nacimiento: ?</p>"}
         <p>Linaje: 
-        ${datos[i].ancestry == "" ? "?" : 
-        datos[i].ancestry == "pure-blood" ? "puro" : 
-        datos[i].ancestry == "half-blood" ? "mestizo" : 
-        "muggle"}</p>
+        ${datos[i].ancestry == "" ? "?" : traducciones.linaje[datos[i].ancestry]}</p>
         <p>Varita:</p>
         <ul>
           <li>- Madera: ${datos[i].wand.wood == "" ? "?" 
-          : datos[i].wand.wood == "holly" ? "acebo" : 
-          datos[i].wand.wood == "vine" ? "viña" : 
-          datos[i].wand.wood == "willow"? "sauce" :
-          datos[i].wand.wood == "fir" ? "abeto" : 
-          datos[i].wand.wood == "oak" ? "roble" : 
-          datos[i].wand.wood == "cherry" ? "cerezo" : 
-          datos[i].wand.wood == "yew" ? "tejo" : 
-          datos[i].wand.wood == "cypress" ? "ciprés" : 
-          datos[i].wand.wood == "mahogany" ? "caoba" : 
-          datos[i].wand.wood == "larch" ? "alerce" : datos[i].wand.wood}</li>
+          : traducciones.varita.madera[datos[i].wand.wood]}</li>
           <li>- Núcleo: 
-          ${datos[i].wand.core == "" ? "?" : 
-          datos[i].wand.core == "unicorn tail-hair" ? "pelo de cola de unicornio" :
-          datos[i].wand.core == "dragon heartstring" ? "corazón de dragón" :
-          datos[i].wand.core == "phoenix feather" ? "pluma de fénix" :
-          datos[i].wand.core == "unicorn hair" ? "pelo de unicornio" :
-          datos[i].wand.core} </li>
+          ${datos[i].wand.core == "" ? "?" : traducciones.varita.núcleo[datos[i].wand.core]} </li>
           <li>- Longitud: ${datos[i].wand.length == null ? "?" :
           datos[i].wand.length + " cm"}</li>
         </ul>
         <p>Patronus: 
-        ${datos[i].patronus == "" ? "?" : 
-        datos[i].patronus == "swan" ? "cisne" : 
-        datos[i].patronus == "hare" ? "liebre" : datos[i].patronus}</p>
+        ${datos[i].patronus == "" ? "?" : traducciones.patronus[datos[i].patronus]}</p>
       </div>
       ${datos[i].image == "" ? "" : `<img src="${datos[i].image}" />`}
 
       </div>
       `
-    }
-  };
-
-  for (let i = 0; i < datos.length; i++) {
-    if(datos[i].house == "Gryffindor") {
+    } else if(datos[i].house == "Gryffindor") {
       casaGryffindor.innerHTML += `
       <div class="personajes">
       <div>
@@ -157,54 +134,23 @@ const getPersonajes = async () => {
         ${datos[i].actor == "" ? "" : `<p style="font-size: 0.9rem">(${datos[i].actor})</p>`} 
         ${datos[i].yearOfBirth != null ? `<p>Nacimiento: ${datos[i].yearOfBirth}` : "<p>Nacimiento: ?</p>"}
         <p>Linaje: 
-        ${datos[i].ancestry == "" ? "?" : 
-        datos[i].ancestry == "pure-blood" ? "puro" : 
-        datos[i].ancestry == "half-blood" ? "mestizo" : 
-        "muggle"}</p>
+        ${datos[i].ancestry == "" ? "?" : traducciones.linaje[datos[i].ancestry]}</p>
         <p>Varita:</p>
         <ul>
           <li>- Madera: ${datos[i].wand.wood == "" ? "?" 
-          : datos[i].wand.wood == "holly" ? "acebo" : 
-          datos[i].wand.wood == "vine" ? "viña" : 
-          datos[i].wand.wood == "willow"? "sauce" :
-          datos[i].wand.wood == "fir" ? "abeto" : 
-          datos[i].wand.wood == "oak" ? "roble" : 
-          datos[i].wand.wood == "cherry" ? "cerezo" : 
-          datos[i].wand.wood == "yew" ? "tejo" : 
-          datos[i].wand.wood == "cypress" ? "ciprés" : 
-          datos[i].wand.wood == "mahogany" ? "caoba" : 
-          datos[i].wand.wood == "larch" ? "alerce" : datos[i].wand.wood}</li>
+          : traducciones.varita.madera[datos[i].wand.wood]}</li>
           <li>- Núcleo: 
-          ${datos[i].wand.core == "" ? "?" : 
-          datos[i].wand.core == "unicorn tail-hair" ? "pelo de cola de unicornio" :
-          datos[i].wand.core == "dragon heartstring" ? "corazón de dragón" :
-          datos[i].wand.core == "phoenix feather" ? "pluma de fénix" :
-          datos[i].wand.core == "unicorn hair" ? "pelo de unicornio" :
-          datos[i].wand.core} </li>
+          ${datos[i].wand.core == "" ? "?" : traducciones.varita.núcleo[datos[i].wand.core]} </li>
           <li>- Longitud: ${datos[i].wand.length == null ? "?" :
           datos[i].wand.length + " cm"}</li>
         </ul>
         <p>Patronus: 
-        ${datos[i].patronus == "" ? "?" : 
-        datos[i].patronus == "swan" ? "cisne" : 
-        datos[i].patronus == "hare" ? "liebre" : 
-        datos[i].patronus == "stag" ? "ciervo" : 
-        datos[i].patronus == "otter" ? "nutria" : 
-        datos[i].patronus == "tabby cat" ? "gato atigrado" : 
-        datos[i].patronus == "Non-Corporeal" ? "no corpóreo" : 
-        datos[i].patronus == "horse" ? "caballo" : 
-        datos[i].patronus == "wolf" ? "lobo" : 
-        datos[i].patronus == "weasel" ? "comadreja" : 
-        datos[i].patronus == "goat" ? "cabra" : datos[i].patronus}</p>
+        ${datos[i].patronus == "" ? "?" : traducciones.patronus[datos[i].patronus]}</p>
       </div>
       ${datos[i].image == "" ? "" : `<img src="${datos[i].image}" />`}
       </div>
       `
-    }
-  };
-
-  for (let i = 0; i < datos.length; i++) {
-    if(datos[i].house == "Hufflepuff") {
+    } else if(datos[i].house == "Hufflepuff") {
       casaHufflepuff.innerHTML += `
       <div class="personajes">
       <div>
@@ -212,46 +158,23 @@ const getPersonajes = async () => {
         ${datos[i].actor == "" ? "" : `<p style="font-size: 0.9rem">(${datos[i].actor})</p>`} 
         ${datos[i].yearOfBirth != null ? `<p>Nacimiento: ${datos[i].yearOfBirth}` : "<p>Nacimiento: ?</p>"}
         <p>Linaje: 
-        ${datos[i].ancestry == "" ? "?" : 
-        datos[i].ancestry == "pure-blood" ? "puro" : 
-        datos[i].ancestry == "half-blood" ? "mestizo" : 
-        "muggle"}</p>
+        ${datos[i].ancestry == "" ? "?" : traducciones.linaje[datos[i].ancestry]}</p>
         <p>Varita:</p>
         <ul>
           <li>- Madera: ${datos[i].wand.wood == "" ? "?" 
-          : datos[i].wand.wood == "holly" ? "acebo" : 
-          datos[i].wand.wood == "vine" ? "viña" : 
-          datos[i].wand.wood == "willow"? "sauce" :
-          datos[i].wand.wood == "fir" ? "abeto" : 
-          datos[i].wand.wood == "oak" ? "roble" : 
-          datos[i].wand.wood == "cherry" ? "cerezo" : 
-          datos[i].wand.wood == "yew" ? "tejo" : 
-          datos[i].wand.wood == "cypress" ? "ciprés" : 
-          datos[i].wand.wood == "mahogany" ? "caoba" : 
-          datos[i].wand.wood == "larch" ? "alerce" : 
-          datos[i].wand.wood == "ash" ? "fresno" : datos[i].wand.wood}</li>
+          : traducciones.varita.madera[datos[i].wand.wood]}</li>
           <li>- Núcleo: 
-          ${datos[i].wand.core == "" ? "?" : 
-          datos[i].wand.core == "unicorn tail-hair" ? "pelo de cola de unicornio" :
-          datos[i].wand.core == "dragon heartstring" ? "corazón de dragón" :
-          datos[i].wand.core == "phoenix feather" ? "pluma de fénix" :
-          datos[i].wand.core == "unicorn hair" ? "pelo de unicornio" :
-          datos[i].wand.core} </li>
+          ${datos[i].wand.core == "" ? "?" : traducciones.varita.núcleo[datos[i].wand.core]} </li>
           <li>- Longitud: ${datos[i].wand.length == null ? "?" :
           datos[i].wand.length + " cm"}</li>
         </ul>
         <p>Patronus: 
-        ${datos[i].patronus == "" ? "?" : 
-        datos[i].patronus == "boar" ? "jabalí" : datos[i].patronus}</p>
+        ${datos[i].patronus == "" ? "?" : traducciones.patronus[datos[i].patronus]}</p>
       </div>
       ${datos[i].image == "" ? "" : `<img src="${datos[i].image}" />`}
       </div>
       `
-    }
-  };
-
-  for (let i = 0; i < datos.length; i++) {
-    if(datos[i].house == "Slytherin") {
+    } else if(datos[i].house == "Slytherin") {
       casaSlytherin.innerHTML += `
       <div class="personajes">
       <div>
@@ -259,43 +182,19 @@ const getPersonajes = async () => {
         ${datos[i].actor == "" ? "" : `<p style="font-size: 0.9rem">(${datos[i].actor})</p>`} 
         ${datos[i].yearOfBirth != null ? `<p>Nacimiento: ${datos[i].yearOfBirth}` : "<p>Nacimiento: ?</p>"}
         <p>Linaje: 
-        ${datos[i].ancestry == "" ? "?" : 
-        datos[i].ancestry == "pure-blood" ? "puro" : 
-        datos[i].ancestry == "half-blood" ? "mestizo" : 
-        "muggle"}</p>
+        ${datos[i].ancestry == "" ? "?" : traducciones.linaje[datos[i].ancestry]}</p>
         <p>Varita:</p>
         <ul>
           <li>- Madera: 
-            ${datos[i].wand.wood == "" ? "?" :
-            datos[i].wand.wood == "holly" ? "acebo" : 
-            datos[i].wand.wood == "vine" ? "viña" : 
-            datos[i].wand.wood == "willow"? "sauce" :
-            datos[i].wand.wood == "fir" ? "abeto" : 
-            datos[i].wand.wood == "oak" ? "roble" : 
-            datos[i].wand.wood == "cherry" ? "cerezo" : 
-            datos[i].wand.wood == "yew" ? "tejo" : 
-            datos[i].wand.wood == "cypress" ? "ciprés" : 
-            datos[i].wand.wood == "mahogany" ? "caoba" : 
-            datos[i].wand.wood == "larch" ? "alerce" : 
-            datos[i].wand.wood == "hawthorn" ? "espino" : 
-            datos[i].wand.wood == "walnut" ? "nogal" : 
-            datos[i].wand.wood == "cedar" ? "cedro" : 
-            datos[i].wand.wood == "birch" ? "abedul" : 
-            datos[i].wand.wood == "elm" ? "olmo" : datos[i].wand.wood}</li>
+            ${datos[i].wand.wood == "" ? "?" 
+            : traducciones.varita.madera[datos[i].wand.wood]}</li>
           <li>- Núcleo: 
-          ${datos[i].wand.core == "" ? "?" : 
-          datos[i].wand.core == "unicorn tail-hair" ? "pelo de cola de unicornio" :
-          datos[i].wand.core == "dragon heartstring" ? "corazón de dragón" :
-          datos[i].wand.core == "phoenix feather" ? "pluma de fénix" :
-          datos[i].wand.core == "unicorn hair" ? "pelo de unicornio" :
-          datos[i].wand.core} </li>
+          ${datos[i].wand.core == "" ? "?" : traducciones.varita.núcleo[datos[i].wand.core]} </li>
           <li>- Longitud: ${datos[i].wand.length == null ? "?" :
           datos[i].wand.length + " cm"}</li>
         </ul>
         <p>Patronus: 
-        ${datos[i].patronus == "" ? "?" : 
-        datos[i].patronus == "doe" ? "cierva" :
-        datos[i].patronus == "persian cat" ? "gato persa" : datos[i].patronus}</p>
+        ${datos[i].patronus == "" ? "?" : traducciones.patronus[datos[i].patronus]}</p>
       </div>
       ${datos[i].image == "" ? "" : `<img src="${datos[i].image}" />`}
       </div>
@@ -303,4 +202,5 @@ const getPersonajes = async () => {
     }
   };
 };
+
 getPersonajes();
