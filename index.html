@@ -29,16 +29,24 @@
       </div> 
     </div>
     <div class="content-container">
-      <button id="flecha-arriba"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></button>
+      <button id="flecha-arriba" class="flecha-desaparecer"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></button>
       <h2 id="bienvenida">Te doy la bienvenida a Hogwarts, <br>haz click en el sombrero seleccionador</h2>
       <div class="casa-container">
-        <img onmouseover="agrandarImg()" onmouseout="volverNormal()" id="sombrero-seleccionador" src="./images/Sorting-Hat.webp">
-        <a id="enlace1" href="#info-gryffindor"><img id="gryffindor" src="./images/Gryffindor.webp"></a>
-        <a id="enlace2" href="#info-ravenclaw"><img id="ravenclaw" src="./images/Ravenclaw.webp"></a>
-        <a id="enlace3" href="#info-hufflepuff"><img id="hufflepuff" src="./images/hufflepuff.webp"></a>
-        <a id="enlace4" href="#info-slytherin"><img id="slytherin" src="./images/Slytherin.webp"></a>
+        <img id="sombrero-seleccionador" src="./images/Sorting-Hat.webp">
+        <a id="enlace1" href="#info-gryffindor" alt="gryffindor">
+          <img id="gryffindor" src="./images/Gryffindor.webp">
+        </a>
+        <a id="enlace2" href="#info-ravenclaw">
+          <img id="ravenclaw" src="./images/Ravenclaw.webp">
+        </a>
+        <a id="enlace3" href="#info-hufflepuff">
+          <img id="hufflepuff" src="./images/hufflepuff.webp">
+        </a>
+        <a id="enlace4" href="#info-slytherin">
+          <img id="slytherin" src="./images/Slytherin.webp">
+        </a>
       </div>
-      <div class="casa gryffindor" id="info-gryffindor">
+      <div class="casa gryffindor" id="info-gryffindor" house="gryffindor">
         <h3 id="titulo-gryffindor">Gryffindor</h3>
         <p>Gryffindor es una de las cuatro casas del Colegio Hogwarts 
           de Magia y Hechicería, fundada por Godric Gryffindor. Su animal 
@@ -51,7 +59,7 @@
            el honor en variadas ocasiones, lo cual también puede aplicar para Gryffindor.</p>
           <h3>Personajes</h3>
       </div>
-      <div class="casa ravenclaw" id="info-ravenclaw">
+      <div class="casa ravenclaw" id="info-ravenclaw" house="ravenclaw">
         <h3>Ravenclaw</h3>
         <p>Ravenclaw es una de las cuatro casas que componen el Colegio Hogwarts de
            Magia y Hechicería, fundada por Rowena Ravenclaw, quién tuvo una hija, 
@@ -67,7 +75,7 @@
              El reloj de arena de los puntos de Ravenclaw contiene zafiros azules.</p>
           <h3>Personajes</h3>
       </div>
-      <div class="casa hufflepuff" id="info-hufflepuff">
+      <div class="casa hufflepuff" id="info-hufflepuff" house="hufflepuff">
         <h3>Hufflepuff</h3>
         <p>Hufflepuff es una de las cuatro casas del Colegio Hogwarts de Magia y Hechicería. 
           Su fundadora es la bruja medieval Helga Hufflepuff. El fraile gordo es el fantasma 
@@ -81,7 +89,7 @@
             demuestran habilidades excepcionales en Herbología, debido a su correspondencia con la tierra.</p>
           <h3>Personajes</h3>
       </div>
-      <div class="casa slytherin" id="info-slytherin">
+      <div class="casa slytherin" id="info-slytherin" house="slytherin">
         <h3>Slytherin</h3>
         <p>Slytherin es una de las cuatro casas del Colegio Hogwarts de Magia y Hechicería, fundada 
           por Salazar Slytherin. Al establecer la casa, Salazar instruyó al Sombrero Seleccionador 

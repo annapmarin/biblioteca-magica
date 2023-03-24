@@ -36,53 +36,36 @@ window.addEventListener("click", () => {
   document.getElementById("bienvenida").innerText = "Escoge tu casa de Hogwarts"
 });
 
+//GRB
 let casaGryffindor = document.getElementById("info-gryffindor");
-let imgGryffindor = document.getElementById("gryffindor");
-imgGryffindor.addEventListener("click", () => {
-  if(casaHufflepuff.style.display == "block" || casaRavenclaw.style.display == "block" || casaSlytherin.style.display == "block") {
-    casaHufflepuff.style.display = "none";
-    casaRavenclaw.style.display = "none";
-    casaSlytherin.style.display = "none";
-  }
-  casaGryffindor.style.display = "block";
-});
-
 let casaHufflepuff = document.getElementById("info-hufflepuff");
-let imgHufflepuff = document.getElementById("hufflepuff");
-imgHufflepuff.addEventListener("click", () => {
-  if(casaGryffindor.style.display == "block" || casaRavenclaw.style.display == "block" || casaSlytherin.style.display == "block") {
-    casaGryffindor.style.display = "none";
-    casaRavenclaw.style.display = "none";
-    casaSlytherin.style.display = "none";
-  }
-  casaHufflepuff.style.display = "block";
-});
-
 let casaRavenclaw = document.getElementById("info-ravenclaw");
-let imgRavenclaw = document.getElementById("ravenclaw");
-imgRavenclaw.addEventListener("click", () => {
-  if(casaGryffindor.style.display == "block" || casaHufflepuff.style.display == "block" || casaSlytherin.style.display == "block") {
-    casaGryffindor.style.display = "none";
-    casaHufflepuff.style.display = "none";
-    casaSlytherin.style.display = "none";
-  }
-  casaRavenclaw.style.display = "block";
-});
-
 let casaSlytherin = document.getElementById("info-slytherin");
+
+let imgGryffindor = document.getElementById("gryffindor");
+let imgHufflepuff = document.getElementById("hufflepuff");
+let imgRavenclaw = document.getElementById("ravenclaw");
 let imgSlytherin = document.getElementById("slytherin");
-imgSlytherin.addEventListener("click", () => {
-  if(casaGryffindor.style.display == "block" || casaHufflepuff.style.display == "block" || casaRavenclaw.style.display == "block") {
-    casaGryffindor.style.display = "none";
-    casaHufflepuff.style.display = "none";
-    casaRavenclaw.style.display = "none";
-  }
-  casaSlytherin.style.display = "block";
-});
+
+const casas = [casaGryffindor, casaHufflepuff, casaRavenclaw, casaSlytherin];
+const imgCasas = [imgGryffindor, imgHufflepuff, imgRavenclaw, imgSlytherin];
+const hideOtherHouses = (event) => {
+  
+  casas.forEach(casa => {
+    if(casa.getAttribute("house") !== event.target.id)
+      casa.style.display = 'none';
+    else
+      casa.style.display = 'block';
+  });
+}
+
+imgCasas.forEach(imgCasa => {
+  imgCasa.addEventListener("click", hideOtherHouses);
+
+})
 
 const respuesta = await fetch("https://hp-api.onrender.com/api/characters");
 const datos = await respuesta.json();
-
 const getPersonajes = async () => {
   for (let i = 0; i < datos.length; i++) {
     if(datos[i].house === "Ravenclaw") {
